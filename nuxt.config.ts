@@ -2,10 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-mongoose', '@sidebase/nuxt-auth'],
+  modules: ['nuxt-mongoose', '@sidebase/nuxt-auth', '@nuxt/ui'],
   
   runtimeConfig: {
     authSecret: process.env.AUTH_SECRET,
+  },
+  alias: {
+    '#tailwind-config': './tailwind.config.js', // Adjust the path to your actual Tailwind config location
   },
 
   mongoose: {

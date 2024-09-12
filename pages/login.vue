@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 definePageMeta({
   middleware: "guest",
-});
+})
 
 const form = ref({
   username: "",
   password: "",
-});
+})
 
 const { signIn } = useAuth();
 
