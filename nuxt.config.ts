@@ -2,14 +2,14 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['nuxt-mongoose', '@sidebase/nuxt-auth', '@nuxt/ui'],
+  modules: ['nuxt-mongoose', '@sidebase/nuxt-auth'],
   
   runtimeConfig: {
     authSecret: process.env.AUTH_SECRET,
   },
-  alias: {
-    '#tailwind-config': './tailwind.config.js', // Adjust the path to your actual Tailwind config location
-  },
+  // alias: {
+  //   '#tailwind-config': './tailwind.config.js', // Adjust the path to your actual Tailwind config location
+  // },
 
   mongoose: {
     uri: process.env.MONGODB_URI,
