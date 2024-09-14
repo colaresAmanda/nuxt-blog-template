@@ -2,8 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['nuxt-mongoose', '@sidebase/nuxt-auth'],
-  
+  modules: ['nuxt-mongoose', '@sidebase/nuxt-auth', 'nuxt-icons', '@nuxt/icon', '@nuxt/fonts'],
+  icon: {
+    serverBundle: {
+      collections: ['carbon'] // <!--- this
+    }
+  },
   runtimeConfig: {
     authSecret: process.env.AUTH_SECRET,
   },
@@ -31,6 +35,16 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap',
+        },
+      ],
     },
   },
 })
